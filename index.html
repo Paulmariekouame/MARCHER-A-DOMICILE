@@ -18,20 +18,20 @@
             --border: #d6d3d1;
             --destructive: #dc2626;
         }
-        
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-        
+
         body {
             background-color: var(--background);
             color: var(--foreground);
             line-height: 1.6;
         }
-        
+
         header {
             background-color: var(--primary);
             color: white;
@@ -41,51 +41,51 @@
             align-items: center;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
-        
+
         header h1 {
             display: flex;
             align-items: center;
             gap: 0.5rem;
         }
-        
+
         .logo {
             font-size: 1.8rem;
             font-weight: bold;
         }
-        
+
         .slogan {
             font-size: 0.9rem;
             font-style: italic;
             margin-left: 1rem;
         }
-        
+
         nav ul {
             display: flex;
             list-style: none;
             gap: 1.5rem;
         }
-        
+
         nav a {
             color: white;
             text-decoration: none;
             font-weight: 500;
             transition: opacity 0.3s;
         }
-        
+
         nav a:hover {
             opacity: 0.8;
         }
-        
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 1rem;
         }
-        
+
         .hero {
             text-align: center;
             padding: 3rem 1rem;
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
                         url('https://placeholder-image-service.onrender.com/image/1200x600?prompt=fresh%20local%20organic%20fruits%20and%20vegetables%20market%20display&id=8105ba0e-3df8-4e88-a5ab-3932bc898d63&customer_id=cus_SNP76m8phya3T9');
             background-size: cover;
             background-position: center;
@@ -93,12 +93,12 @@
             border-radius: 8px;
             margin-bottom: 2rem;
         }
-        
+
         .hero h2 {
             font-size: 2.5rem;
             margin-bottom: 1rem;
         }
-        
+
         .hero p {
             font-size: 1.2rem;
             margin-bottom: 2rem;
@@ -106,7 +106,7 @@
             margin-left: auto;
             margin-right: auto;
         }
-        
+
         .btn {
             display: inline-block;
             padding: 0.8rem 1.5rem;
@@ -119,26 +119,26 @@
             transition: background-color 0.3s;
             text-decoration: none;
         }
-        
+
         .btn:hover {
             background-color: var(--primary-dark);
         }
-        
+
         .btn-secondary {
             background-color: var(--secondary);
         }
-        
+
         .btn-secondary:hover {
             background-color: var(--accent);
         }
-        
+
         .categories {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 1.5rem;
             margin-bottom: 3rem;
         }
-        
+
         .category-card {
             background-color: var(--card);
             border-radius: 8px;
@@ -146,38 +146,38 @@
             box-shadow: 0 4px 6px rgba(0,0,0,0.05);
             transition: transform 0.3s;
         }
-        
+
         .category-card:hover {
             transform: translateY(-5px);
         }
-        
+
         .category-image {
             height: 180px;
             overflow: hidden;
         }
-        
+
         .category-image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
-        
+
         .category-content {
             padding: 1.5rem;
         }
-        
+
         .category-content h3 {
             margin-bottom: 0.5rem;
             color: var(--primary-dark);
         }
-        
+
         .products {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             gap: 1.5rem;
             margin-bottom: 3rem;
         }
-        
+
         .product-card {
             background-color: var(--card);
             border-radius: 8px;
@@ -185,46 +185,46 @@
             box-shadow: 0 4px 6px rgba(0,0,0,0.05);
             transition: transform 0.3s;
         }
-        
+
         .product-card:hover {
             transform: translateY(-5px);
         }
-        
+
         .product-image {
             height: 200px;
             overflow: hidden;
         }
-        
+
         .product-image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
-        
+
         .product-content {
             padding: 1.5rem;
         }
-        
+
         .product-title {
             font-weight: 600;
             margin-bottom: 0.5rem;
             font-size: 1.1rem;
         }
-        
+
         .product-price {
             color: var(--primary);
             font-weight: bold;
             font-size: 1.2rem;
             margin-bottom: 1rem;
         }
-        
+
         .quantity-controls {
             display: flex;
             align-items: center;
             gap: 0.5rem;
             margin-bottom: 1rem;
         }
-        
+
         .quantity-btn {
             width: 30px;
             height: 30px;
@@ -233,7 +233,7 @@
             border-radius: 4px;
             cursor: pointer;
         }
-        
+
         .quantity-input {
             width: 40px;
             height: 30px;
@@ -241,12 +241,12 @@
             border: 1px solid var(--border);
             border-radius: 4px;
         }
-        
+
         .add-to-cart {
             width: 100%;
             padding: 0.5rem;
         }
-        
+
         .contact-info {
             background-color: var(--muted);
             padding: 2rem;
@@ -254,19 +254,19 @@
             margin-bottom: 2rem;
             text-align: center;
         }
-        
+
         .contact-info h2 {
             margin-bottom: 1rem;
             color: var(--primary-dark);
         }
-        
+
         .contact-methods {
             display: flex;
             justify-content: center;
             gap: 2rem;
             margin-top: 1rem;
         }
-        
+
         .contact-btn {
             display: flex;
             align-items: center;
@@ -278,11 +278,11 @@
             text-decoration: none;
             font-weight: 500;
         }
-        
+
         .contact-btn:hover {
             background-color: var(--primary-dark);
         }
-        
+
         .checkout-section {
             background-color: var(--card);
             padding: 2rem;
@@ -290,37 +290,37 @@
             box-shadow: 0 4px 6px rgba(0,0,0,0.05);
             margin-bottom: 2rem;
         }
-        
+
         .checkout-section h2 {
             margin-bottom: 1.5rem;
             color: var(--primary-dark);
         }
-        
+
         .form-group {
             margin-bottom: 1.5rem;
         }
-        
+
         .form-group label {
             display: block;
             margin-bottom: 0.5rem;
             font-weight: 500;
         }
-        
-        .form-group input {
+
+        .form-group input, .form-group select {
             width: 100%;
             padding: 0.8rem;
             border: 1px solid var(--border);
             border-radius: 4px;
             font-size: 1rem;
         }
-        
+
         .cart-summary {
             background-color: var(--muted);
             padding: 1.5rem;
             border-radius: 8px;
             margin-top: 2rem;
         }
-        
+
         .cart-item {
             display: flex;
             justify-content: space-between;
@@ -328,7 +328,7 @@
             padding-bottom: 1rem;
             border-bottom: 1px solid var(--border);
         }
-        
+
         .cart-total {
             display: flex;
             justify-content: space-between;
@@ -338,7 +338,7 @@
             padding-top: 1rem;
             border-top: 2px solid var(--border);
         }
-        
+
         footer {
             background-color: var(--primary);
             color: white;
@@ -346,105 +346,7 @@
             padding: 2rem;
             margin-top: 3rem;
         }
-        
-        .admin-login {
-            max-width: 400px;
-            margin: 2rem auto;
-            padding: 2rem;
-            background-color: var(--card);
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-        }
-        
-        .admin-panel {
-            background-color: var(--card);
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            padding: 2rem;
-            margin-bottom: 2rem;
-        }
-        
-        .admin-nav {
-            display: flex;
-            gap: 1rem;
-            margin-bottom: 2rem;
-            border-bottom: 1px solid var(--border);
-            padding-bottom: 1rem;
-        }
-        
-        .admin-nav button {
-            padding: 0.5rem 1rem;
-            background-color: var(--muted);
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-        
-        .admin-nav button.active {
-            background-color: var(--primary);
-            color: white;
-        }
-        
-        .orders-table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        
-        .orders-table th, .orders-table td {
-            padding: 0.8rem;
-            text-align: left;
-            border-bottom: 1px solid var(--border);
-        }
-        
-        .orders-table th {
-            background-color: var(--muted);
-            font-weight: 600;
-        }
-        
-        .status-badge {
-            padding: 0.3rem 0.8rem;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 500;
-        }
-        
-        .status-pending {
-            background-color: #fef3c7;
-            color: #92400e;
-        }
-        
-        .status-delivered {
-            background-color: #dcfce7;
-            color: #166534;
-        }
-        
-        .dashboard-cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin-bottom: 2rem;
-        }
-        
-        .dashboard-card {
-            background-color: var(--card);
-            border-radius: 8px;
-            padding: 1.5rem;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            text-align: center;
-        }
-        
-        .dashboard-card h3 {
-            color: var(--muted-foreground);
-            margin-bottom: 0.5rem;
-            font-size: 1rem;
-        }
-        
-        .dashboard-card p {
-            font-size: 2rem;
-            font-weight: bold;
-            color: var(--primary);
-        }
-        
+
         .modal {
             display: none;
             position: fixed;
@@ -457,7 +359,7 @@
             align-items: center;
             z-index: 1000;
         }
-        
+
         .modal-content {
             background-color: var(--card);
             padding: 2rem;
@@ -467,31 +369,46 @@
             max-height: 80vh;
             overflow-y: auto;
         }
-        
+
         .modal-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             margin-bottom: 1.5rem;
         }
-        
+
         .close-modal {
             background: none;
             border: none;
             font-size: 1.5rem;
             cursor: pointer;
         }
-        
-        .user-dashboard {
-            background-color: var(--card);
-            border-radius: 8px;
-            padding: 2rem;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            margin-bottom: 2rem;
+
+        .filter-btn {
+            background-color: var(--muted);
+            color: var(--foreground);
+            border: 1px solid var(--border);
+        }
+
+        .filter-btn.active {
+            background-color: var(--primary);
+            color: white;
+            border-color: var(--primary-dark);
         }
         
-        .user-orders {
-            margin-top: 2rem;
+        .whatsapp-btn {
+            background-color: #25D366;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            display: block;
+            margin-top: 1rem;
+        }
+        .whatsapp-btn:hover {
+            background-color: #128C7E;
         }
         
         @media (max-width: 768px) {
@@ -499,18 +416,12 @@
                 flex-direction: column;
                 gap: 0.5rem;
             }
-            
-            .categories, .products {
+            .products {
                 grid-template-columns: 1fr;
             }
-            
             .contact-methods {
                 flex-direction: column;
                 align-items: center;
-            }
-            
-            .dashboard-cards {
-                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -526,18 +437,16 @@
                 <li><a href="#" onclick="showSection('home')">Accueil</a></li>
                 <li><a href="#" onclick="showSection('products')">Produits</a></li>
                 <li><a href="#" onclick="showSection('cart')">Panier</a></li>
-                <li><a href="#" onclick="showSection('contact')">Contact</a></li>
-                <li><a href="#" onclick="showSection('admin-login')">Admin</a></li>
+                <li><a href="admin-dashboard.html">Admin</a></li>
             </ul>
         </nav>
     </header>
 
     <div class="container">
-        <!-- Home Section -->
         <section id="home-section" class="section">
             <div class="hero">
                 <h2>Votre marché bio livré à domicile</h2>
-                <p>Découvrez nos produits frais issus de l'agriculture locale et biologique, livrés directement chez vous 24h/24</p>
+                <p>Découvrez nos produits frais issus de l'agriculture locale et biologique, livrés directement chez vous</p>
                 <a href="#" class="btn" onclick="showSection('products')">Voir les produits</a>
             </div>
 
@@ -545,7 +454,7 @@
             <div class="categories">
                 <div class="category-card">
                     <div class="category-image">
-                        <img src="https://placeholder-image-service.onrender.com/image/400x300?prompt=fresh%20organic%20vegetables%20colorful%20display&id=8105ba0e-3df8-4e88-a5ab-3932bc898d63&customer_id=cus_SNP76m8phya3T9" alt="Légumes frais et biologiques de saison">
+                        <img src="https://placeholder-image-service.onrender.com/image/400x300?prompt=fresh%20organic%20vegetables%20colorful%20display" alt="Légumes frais et biologiques de saison">
                     </div>
                     <div class="category-content">
                         <h3>Légumes</h3>
@@ -553,10 +462,10 @@
                         <a href="#" class="btn" onclick="showSection('products')">Voir</a>
                     </div>
                 </div>
-                
+
                 <div class="category-card">
                     <div class="category-image">
-                        <img src="https://placeholder-image-service.onrender.com/image/400x300?prompt=fresh%20organic%20fruits%20colorful%20display&id=8105ba0e-3df8-4e88-a5ab-3932bc898d63&customer_id=cus_SNP76m8phya3T9" alt="Fruits frais et biologiques de saison">
+                        <img src="https://placeholder-image-service.onrender.com/image/400x300?prompt=fresh%20organic%20fruits%20colorful%20display" alt="Fruits frais et biologiques de saison">
                     </div>
                     <div class="category-content">
                         <h3>Fruits</h3>
@@ -564,10 +473,10 @@
                         <a href="#" class="btn" onclick="showSection('products')">Voir</a>
                     </div>
                 </div>
-                
+
                 <div class="category-card">
                     <div class="category-image">
-                        <img src="https://placeholder-image-service.onrender.com/image/400x300?prompt=fresh%20organic%20meats%20butcher%20display&id=8105ba0e-3df8-4e88-a5ab-3932bc898d63&customer_id=cus_SNP76m8phya3T9" alt="Viandes fraîches de qualité provenant d'élevages locaux">
+                        <img src="https://placeholder-image-service.onrender.com/image/400x300?prompt=fresh%20organic%20meats%20butcher%20display" alt="Viandes fraîches de qualité provenant d'élevages locaux">
                     </div>
                     <div class="category-content">
                         <h3>Viandes</h3>
@@ -575,10 +484,10 @@
                         <a href="#" class="btn" onclick="showSection('products')">Voir</a>
                     </div>
                 </div>
-                
+
                 <div class="category-card">
                     <div class="category-image">
-                        <img src="https://placeholder-image-service.onrender.com/image/400x300?prompt=organic%20dairy%20products%20cheese%20milk%20display&id=8105ba0e-3df8-4e88-a5ab-3932bc898d63&customer_id=cus_SNP76m8phya3T9" alt="Produits laitiers biologiques et artisanaux">
+                        <img src="https://placeholder-image-service.onrender.com/image/400x300?prompt=organic%20dairy%20products%20cheese%20milk%20display" alt="Produits laitiers biologiques et artisanaux">
                     </div>
                     <div class="category-content">
                         <h3>Autres produits</h3>
@@ -602,20 +511,34 @@
             </div>
         </section>
 
-        <!-- Products Section -->
         <section id="products-section" class="section" style="display: none;">
             <h2>Nos produits</h2>
-            <div class="products" id="products-container">
-                <!-- Products will be loaded here -->
+            <div class="search-container" style="margin-bottom: 1.5rem;">
+                <input type="text" id="product-search" placeholder="Rechercher un produit..." style="width: 100%; padding: 0.8rem; border: 1px solid var(--border); border-radius: 4px;">
             </div>
+            <div class="filters-container" style="margin-bottom: 2rem; display: flex; flex-wrap: wrap; gap: 0.5rem;">
+                <button class="btn filter-btn active" data-filter="all">Tous les produits</button>
+                <button class="btn filter-btn" data-filter="legumes_frais">Légumes frais</button>
+                <button class="btn filter-btn" data-filter="legumes_racine">Légumes racines</button>
+                <button class="btn filter-btn" data-filter="tubercules">Tubercules</button>
+                <button class="btn filter-btn" data-filter="fruits_exotiques">Fruits exotiques</button>
+                <button class="btn filter-btn" data-filter="fruits_rouges">Fruits rouges</button>
+                <button class="btn filter-btn" data-filter="agrumes">Agrumes</button>
+                <button class="btn filter-btn" data-filter="volailles">Volailles</button>
+                <button class="btn filter-btn" data-filter="viandes_rouges">Viandes rouges</button>
+                <button class="btn filter-btn" data-filter="poissons">Poissons</button>
+                <button class="btn filter-btn" data-filter="cremerie_oeufs">Crémerie & Œufs</button>
+                <button class="btn filter-btn" data-filter="cereales">Céréales & Légumineuses</button>
+                <button class="btn filter-btn" data-filter="epices">Épices & Condiments</button>
+            </div>
+            <div class="products" id="products-container">
+                </div>
         </section>
 
-        <!-- Cart Section -->
         <section id="cart-section" class="section" style="display: none;">
             <h2>Votre panier</h2>
             <div id="cart-items">
-                <!-- Cart items will be loaded here -->
-            </div>
+                </div>
             <div class="checkout-section">
                 <h2>Finaliser votre commande</h2>
                 <form id="checkout-form">
@@ -633,834 +556,278 @@
                     </div>
                     <div class="form-group">
                         <label for="notes">Notes supplémentaires (optionnel)</label>
-                        <input type="text" id="notes">
+                        <textarea id="notes" rows="4"></textarea>
                     </div>
-                    <button type="submit" class="btn">Commander</button>
+                    <button type="submit" class="btn">Commander et payer</button>
                 </form>
             </div>
         </section>
-
-        <!-- Contact Section -->
-        <section id="contact-section" class="section" style="display: none;">
-            <h2>Contactez-nous</h2>
-            <div class="contact-info">
-                <p>Nous sommes disponibles 24h/24 pour répondre à vos questions et prendre vos commandes</p>
-                <div class="contact-methods">
-                    <a href="https://wa.me/2250700318328" class="contact-btn" target="_blank">
-                        <span>WhatsApp</span>
-                    </a>
-                    <a href="tel:+2250700318328" class="contact-btn">
-                        <span>Appeler</span>
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Admin Login Section -->
-        <section id="admin-login-section" class="section" style="display: none;">
-            <div class="admin-login">
-                <h2>Connexion administrateur</h2>
-                <form id="admin-login-form">
-                    <div class="form-group">
-                        <label for="admin-email">Email</label>
-                        <input type="email" id="admin-email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="admin-password">Mot de passe</label>
-                        <input type="password" id="admin-password" required>
-                    </div>
-                    <button type="submit" class="btn">Se connecter</button>
-                </form>
-            </div>
-        </section>
-
-        <!-- Admin Dashboard Section -->
-        <section id="admin-dashboard-section" class="section" style="display: none;">
-            <h2>Tableau de bord administrateur</h2>
-            
-            <div class="dashboard-cards">
-                <div class="dashboard-card">
-                    <h3>Commandes aujourd'hui</h3>
-                    <p id="today-orders">0</p>
-                </div>
-                <div class="dashboard-card">
-                    <h3>Commandes en attente</h3>
-                    <p id="pending-orders">0</p>
-                </div>
-                <div class="dashboard-card">
-                    <h3>Revenu du mois</h3>
-                    <p id="month-revenue">0 FCFA</p>
-                </div>
-            </div>
-            
-            <div class="admin-nav">
-                <button class="active" onclick="showAdminTab('orders')">Commandes</button>
-                <button onclick="showAdminTab('products')">Produits</button>
-                <button onclick="showAdminTab('admins')">Administrateurs</button>
-            </div>
-            
-            <div id="admin-orders-tab">
-                <div class="admin-panel">
-                    <h3>Gestion des commandes</h3>
-                    <table class="orders-table">
-                        <thead>
-                            <tr>
-                                <th>Référence</th>
-                                <th>Client</th>
-                                <th>Date</th>
-                                <th>Total</th>
-                                <th>Statut</th>
-                                <th>Actions</th>
-                            </tr>
-                        </thead>
-                        <tbody id="orders-table-body">
-                            <!-- Orders will be loaded here -->
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-            
-            <div id="admin-products-tab" style="display: none;">
-                <div class="admin-panel">
-                    <h3>Gestion des produits</h3>
-                    <button class="btn" onclick="showModal('add-product-modal')">Ajouter un produit</button>
-                    <div class="products">
-                        <!-- Admin products will be loaded here -->
-                    </div>
-                </div>
-            </div>
-            
-            <div id="admin-admins-tab" style="display: none;">
-                <div class="admin-panel">
-                    <h3>Gestion des administrateurs</h3>
-                    <button class="btn" onclick="showModal('add-admin-modal')">Ajouter un administrateur</button>
-                    <table class="orders-table">
-                        <thead>
-                            <tr>
-                                <th>Nom</th>
-                                <th>Email</th>
-                                <th>Date d'ajout</th>
-                                <th>Actions</th>
-                            </tr>
-                        </thead>
-                        <tbody id="admins-table-body">
-                            <!-- Admins will be loaded here -->
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </section>
-
-        <!-- User Dashboard Section -->
-        <section id="user-dashboard-section" class="section" style="display: none;">
-            <div class="user-dashboard">
-                <h2>Mon compte</h2>
-                <p>Bienvenue <span id="user-name"></span> !</p>
-                
-                <div class="user-orders">
-                    <h3>Mes commandes</h3>
-                    <div id="user-orders-list">
-                        <!-- User orders will be loaded here -->
-                    </div>
-                </div>
-            </div>
-        </section>
     </div>
 
-    <!-- Modals -->
-    <div id="add-product-modal" class="modal">
+    <div id="confirmation-modal" class="modal">
         <div class="modal-content">
             <div class="modal-header">
-                <h3>Ajouter un produit</h3>
-                <button class="close-modal" onclick="closeModal('add-product-modal')">&times;</button>
+                <h3>Commande passée avec succès !</h3>
+                <button class="close-modal" onclick="closeModal('confirmation-modal')">&times;</button>
             </div>
-            <form id="add-product-form">
-                <div class="form-group">
-                    <label for="product-name">Nom du produit</label>
-                    <input type="text" id="product-name" required>
-                </div>
-                <div class="form-group">
-                    <label for="product-category">Catégorie</label>
-                    <select id="product-category" required>
-                        <option value="legumes">Légumes</option>
-                        <option value="fruits">Fruits</option>
-                        <option value="viandes">Viandes</option>
-                        <option value="autres">Autres</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="product-price">Prix (FCFA)</label>
-                    <input type="number" id="product-price" required min="0">
-                </div>
-                <div class="form-group">
-                    <label for="product-description">Description</label>
-                    <input type="text" id="product-description">
-                </div>
-                <button type="submit" class="btn">Ajouter</button>
-            </form>
+            <p>Votre commande est enregistrée. Veuillez effectuer le paiement sur le numéro Wave suivant pour que votre commande soit préparée et livrée.</p>
+            <p style="font-size: 1.5rem; font-weight: bold; margin: 1rem 0;">Numéro Wave: 07 00 31 83 28</p>
+            <p>Montant total : <span id="modal-total-price" style="font-weight: bold;"></span></p>
+            <p>Votre numéro de référence est : <span id="modal-order-id" style="font-weight: bold;"></span></p>
+            <a href="https://wa.me/2250700318328?text=Bonjour,%20je%20viens%20de%20passer%20une%20commande%20avec%20la%20r%C3%A9f%C3%A9rence%20%5BVotre%20r%C3%A9f%C3%A9rence%5D.%20Voici%20la%20capture%20d%27%C3%A9cran%20de%20mon%20paiement.%20Merci." target="_blank" class="whatsapp-btn">Envoyer la capture de paiement sur WhatsApp</a>
         </div>
     </div>
-
-    <div id="add-admin-modal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3>Ajouter un administrateur</h3>
-                <button class="close-modal" onclick="closeModal('add-admin-modal')">&times;</button>
-            </div>
-            <form id="add-admin-form">
-                <div class="form-group">
-                    <label for="admin-name">Nom complet</label>
-                    <input type="text" id="admin-name" required>
-                </div>
-                <div class="form-group">
-                    <label for="admin-email-add">Email</label>
-                    <input type="email" id="admin-email-add" required>
-                </div>
-                <div class="form-group">
-                    <label for="admin-password-add">Mot de passe</label>
-                    <input type="password" id="admin-password-add" required>
-                </div>
-                <button type="submit" class="btn">Ajouter</button>
-            </form>
-        </div>
-    </div>
-
-    <div id="order-details-modal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3>Détails de la commande</h3>
-                <button class="close-modal" onclick="closeModal('order-details-modal')">&times;</button>
-            </div>
-            <div id="order-details-content">
-                <!-- Order details will be loaded here -->
-            </div>
-        </div>
-    </div>
-
+    
     <footer>
         <p>© 2023 Marché à Domicile - Marché Bio et Local. Tous droits réservés.</p>
         <p>Service disponible 24h/24 - Contact: <a href="tel:+2250700318328" style="color: white;">07 00 31 83 28</a></p>
     </footer>
 
     <script>
-        // Data storage and initialization
-        let cart = [];
-        let currentUser = null;
-        let isAdmin = false;
-        let products = [];
-        let orders = [];
-        let admins = [];
-        
-        // Initialize the application
-        function initApp() {
-            // Load data from localStorage
-            const savedProducts = localStorage.getItem('market_products');
-            const savedOrders = localStorage.getItem('market_orders');
-            const savedAdmins = localStorage.getItem('market_admins');
-            const savedCart = localStorage.getItem('market_cart');
-            
-            if (savedProducts) {
-                products = JSON.parse(savedProducts);
-            } else {
-                // Default products if none exist
-                products = [
-                    {
-                        id: 1,
-                        name: "Tomates bio",
-                        category: "legumes",
-                        price: 1500,
-                        description: "Tomates cerises biologiques",
-                        image: "https://placeholder-image-service.onrender.com/image/400x300?prompt=fresh%20organic%20cherry%20tomatoes&id=8105ba0e-3df8-4e88-a5ab-3932bc898d63&customer_id=cus_SNP76m8phya3T9"
-                    },
-                    {
-                        id: 2,
-                        name: "Carottes bio",
-                        category: "legumes",
-                        price: 1200,
-                        description: "Carottes fraîches du jardin",
-                        image: "https://placeholder-image-service.onrender.com/image/400x300?prompt=fresh%20organic%20carrots%20bunch&id=8105ba0e-3df8-4e88-a5ab-3932bc898d63&customer_id=cus_SNP76m8phya3T9"
-                    },
-                    {
-                        id: 3,
-                        name: "Bananes",
-                        category: "fruits",
-                        price: 2000,
-                        description: "Bananes plantain mûres",
-                        image: "https://placeholder-image-service.onrender.com/image/400x300?prompt=fresh%20ripe%20plantain%20bananas&id=8105ba0e-3df8-4e88-a5ab-3932bc898d63&customer_id=cus_SNP76m8phya3T9"
-                    },
-                    {
-                        id: 4,
-                        name: "Poulet fermier",
-                        category: "viandes",
-                        price: 5000,
-                        description: "Poulet fermier élevé en plein air",
-                        image: "https://placeholder-image-service.onrender.com/image/400x300?prompt=fresh%20free%20range%20chicken&id=8105ba0e-3df8-4e88-a5ab-3932bc898d63&customer_id=cus_SNP76m8phya3T9"
-                    }
-                ];
-                localStorage.setItem('market_products', JSON.stringify(products));
-            }
-            
-            if (savedOrders) {
-                orders = JSON.parse(savedOrders);
-            }
-            
-            if (savedAdmins) {
-                admins = JSON.parse(savedAdmins);
-            } else {
-                // Default admin account
-                admins = [
-                    {
-                        name: "Super Admin",
-                        email: "paulkouame973@gmail.com",
-                        password: "admin123",
-                        isSuperAdmin: true,
-                        createdAt: new Date().toISOString()
-                    }
-                ];
-                localStorage.setItem('market_admins', JSON.stringify(admins));
-            }
-            
-            if (savedCart) {
-                cart = JSON.parse(savedCart);
-            }
-            
-            // Load products on page load
-            loadProducts();
-            
-            // Set up event listeners
-            document.getElementById('checkout-form').addEventListener('submit', handleCheckout);
-            document.getElementById('admin-login-form').addEventListener('submit', handleAdminLogin);
-            document.getElementById('add-product-form').addEventListener('submit', handleAddProduct);
-            document.getElementById('add-admin-form').addEventListener('submit', handleAddAdmin);
-            
-            // Check if user is already logged in
-            const savedUser = localStorage.getItem('market_user');
-            if (savedUser) {
-                currentUser = JSON.parse(savedUser);
-                document.getElementById('user-name').textContent = currentUser.name;
-                showSection('user-dashboard');
-            }
-        }
-        
-        // Show a specific section
+        // DATA
+        let cart = JSON.parse(localStorage.getItem('market_cart')) || [];
+        let products = JSON.parse(localStorage.getItem('market_products')) || [
+            // Légumes
+            { id: 1, name: "Tomates cerises", category: "legumes", subcategory: "legumes_frais", price: 1500, description: "Tomates cerises biologiques et juteuses.", image: "https://placeholder-image-service.onrender.com/image/400x300?prompt=fresh%20organic%20cherry%20tomatoes" },
+            { id: 2, name: "Carottes", category: "legumes", subcategory: "legumes_racine", price: 1200, description: "Carottes fraîches du jardin.", image: "https://placeholder-image-service.onrender.com/image/400x300?prompt=fresh%20organic%20carrots%20bunch" },
+            { id: 3, name: "Salade verte", category: "legumes", subcategory: "legumes_frais", price: 800, description: "Un mélange de laitue et de roquette.", image: "https://placeholder-image-service.onrender.com/image/400x300?prompt=organic%20green%20lettuce" },
+            { id: 4, name: "Piments", category: "legumes", subcategory: "legumes_frais", price: 500, description: "Piments rouges frais pour relever vos plats.", image: "https://placeholder-image-service.onrender.com/image/400x300?prompt=fresh%20red%20chili%20peppers" },
+            // Fruits
+            { id: 5, name: "Bananes plantain", category: "fruits", subcategory: "fruits_exotiques", price: 2000, description: "Bananes plantain mûres pour la cuisson.", image: "https://placeholder-image-service.onrender.com/image/400x300?prompt=fresh%20ripe%20plantain%20bananas" },
+            { id: 6, name: "Fraises", category: "fruits", subcategory: "fruits_rouges", price: 4500, description: "Fraises sucrées et juteuses.", image: "https://placeholder-image-service.onrender.com/image/400x300?prompt=fresh%20ripe%20strawberries" },
+            { id: 7, name: "Mangues", category: "fruits", subcategory: "fruits_exotiques", price: 3000, description: "Mangues locales bien mûres.", image: "https://placeholder-image-service.onrender.com/image/400x300?prompt=fresh%20ripe%20mangoes" },
+            { id: 8, name: "Oranges", category: "fruits", subcategory: "agrumes", price: 1000, description: "Oranges pleines de vitamines C.", image: "https://placeholder-image-service.onrender.com/image/400x300?prompt=fresh%20organic%20oranges%20pile" },
+            { id: 9, name: "Citrons verts", category: "fruits", subcategory: "agrumes", price: 700, description: "Citrons verts frais pour assaisonner.", image: "https://placeholder-image-service.onrender.com/image/400x300?prompt=fresh%20limes%20pile" },
+            // Viandes
+            { id: 10, name: "Poulet fermier", category: "viandes", subcategory: "volailles", price: 5000, description: "Poulet fermier élevé en plein air.", image: "https://placeholder-image-service.onrender.com/image/400x300?prompt=fresh%20free%20range%20chicken" },
+            { id: 11, name: "Bœuf haché", category: "viandes", subcategory: "viandes_rouges", price: 8500, description: "Bœuf haché frais et maigre.", image: "https://placeholder-image-service.onrender.com/image/400x300?prompt=fresh%20ground%20beef" },
+            { id: 12, name: "Poisson Tilapia", category: "viandes", subcategory: "poissons", price: 3500, description: "Poisson Tilapia frais du jour.", image: "https://placeholder-image-service.onrender.com/image/400x300?prompt=fresh%20tilapia%20fish" },
+            // Autres produits
+            { id: 13, name: "Œufs fermiers (Douzaine)", category: "autres", subcategory: "cremerie_oeufs", price: 3000, description: "Douzaine d'œufs frais de poules élevées en plein air.", image: "https://placeholder-image-service.onrender.com/image/400x300?prompt=fresh%20organic%20eggs" },
+            { id: 14, name: "Fromage de chèvre", category: "autres", subcategory: "cremerie_oeufs", price: 6000, description: "Fromage de chèvre artisanal.", image: "https://placeholder-image-service.onrender.com/image/400x300?prompt=artisan%20goat%20cheese" },
+            { id: 15, name: "Riz local (1kg)", category: "autres", subcategory: "cereales", price: 1000, description: "Riz de haute qualité cultivé localement.", image: "https://placeholder-image-service.onrender.com/image/400x300?prompt=local%20organic%20rice" },
+            { id: 16, name: "Huile de palme rouge", category: "autres", subcategory: "autres", price: 2500, description: "Huile de palme 100% naturelle et artisanale.", image: "https://placeholder-image-service.onrender.com/image/400x300?prompt=natural%20red%20palm%20oil" }
+        ];
+
+        let orders = JSON.parse(localStorage.getItem('market_orders')) || [];
+
+        // FUNCTIONS
         function showSection(sectionId) {
-            // Hide all sections
             document.querySelectorAll('.section').forEach(section => {
                 section.style.display = 'none';
             });
-            
-            // Show the requested section
-            if (sectionId === 'home') {
-                document.getElementById('home-section').style.display = 'block';
-            } else if (sectionId === 'products') {
-                document.getElementById('products-section').style.display = 'block';
-                loadProducts();
-            } else if (sectionId === 'cart') {
-                document.getElementById('cart-section').style.display = 'block';
+            document.getElementById(sectionId + '-section').style.display = 'block';
+
+            if (sectionId === 'products') {
+                loadProducts('all');
+                document.getElementById('product-search').value = '';
+            }
+            if (sectionId === 'cart') {
                 loadCart();
-            } else if (sectionId === 'contact') {
-                document.getElementById('contact-section').style.display = 'block';
-            } else if (sectionId === 'admin-login') {
-                document.getElementById('admin-login-section').style.display = 'block';
-            } else if (sectionId === 'user-dashboard') {
-                document.getElementById('user-dashboard-section').style.display = 'block';
-                loadUserOrders();
             }
         }
-        
-        // Load products into the products section
-        function loadProducts() {
-            const container = document.getElementById('products-container');
-            container.innerHTML = '';
+
+        function loadProducts(filter = 'all') {
+            const productsContainer = document.getElementById('products-container');
+            productsContainer.innerHTML = '';
             
-            products.forEach(product => {
+            const filteredProducts = products.filter(p => filter === 'all' || p.subcategory === filter);
+
+            if (filteredProducts.length === 0) {
+                productsContainer.innerHTML = '<p>Aucun produit disponible dans cette sous-catégorie.</p>';
+                return;
+            }
+
+            filteredProducts.forEach(product => {
                 const productCard = document.createElement('div');
                 productCard.className = 'product-card';
-                
                 productCard.innerHTML = `
                     <div class="product-image">
-                        <img src="${product.image}" alt="${product.name} - ${product.description}">
+                        <img src="${product.image}" alt="${product.name}">
                     </div>
                     <div class="product-content">
                         <h3 class="product-title">${product.name}</h3>
                         <p>${product.description}</p>
-                        <p class="product-price">${product.price.toLocaleString()} FCFA</p>
+                        <div class="product-price">${product.price} FCFA</div>
                         <div class="quantity-controls">
-                            <button class="quantity-btn" onclick="decreaseQuantity(${product.id})">-</button>
-                            <input type="number" class="quantity-input" id="qty-${product.id}" value="0" min="0" readonly>
-                            <button class="quantity-btn" onclick="increaseQuantity(${product.id})">+</button>
+                            <button class="quantity-btn" onclick="updateQuantity(${product.id}, -1)">-</button>
+                            <input type="number" class="quantity-input" id="quantity-${product.id}" value="1" min="1">
+                            <button class="quantity-btn" onclick="updateQuantity(${product.id}, 1)">+</button>
                         </div>
                         <button class="btn add-to-cart" onclick="addToCart(${product.id})">Ajouter au panier</button>
                     </div>
                 `;
-                
-                container.appendChild(productCard);
+                productsContainer.appendChild(productCard);
+            });
+        }
+
+        function attachFilterListeners() {
+            document.querySelectorAll('.filter-btn').forEach(button => {
+                button.addEventListener('click', (e) => {
+                    document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+                    e.target.classList.add('active');
+                    const filter = e.target.getAttribute('data-filter');
+                    loadProducts(filter);
+                });
             });
         }
         
-        // Add product to cart
-        function addToCart(productId) {
-            const product = products.find(p => p.id === productId);
-            const quantityInput = document.getElementById(`qty-${productId}`);
-            const quantity = parseInt(quantityInput.value);
+        document.getElementById('product-search').addEventListener('keyup', (e) => {
+            const searchTerm = e.target.value.toLowerCase();
+            const productsContainer = document.getElementById('products-container');
+            productsContainer.innerHTML = '';
             
-            if (quantity > 0) {
-                const existingItem = cart.find(item => item.productId === productId);
-                
-                if (existingItem) {
-                    existingItem.quantity += quantity;
-                } else {
-                    cart.push({
-                        productId: productId,
-                        name: product.name,
-                        price: product.price,
-                        quantity: quantity,
-                        image: product.image
-                    });
-                }
-                
-                // Save cart to localStorage
-                localStorage.setItem('market_cart', JSON.stringify(cart));
-                
-                // Reset quantity input
-                quantityInput.value = 0;
-                
-                // Show confirmation
-                alert(`${quantity} ${product.name} ajouté(s) au panier`);
-            } else {
-                alert('Veuillez sélectionner une quantité');
-            }
-        }
-        
-        // Increase quantity for a product
-        function increaseQuantity(productId) {
-            const input = document.getElementById(`qty-${productId}`);
-            input.value = parseInt(input.value) + 1;
-        }
-        
-        // Decrease quantity for a product
-        function decreaseQuantity(productId) {
-            const input = document.getElementById(`qty-${productId}`);
-            if (parseInt(input.value) > 0) {
-                input.value = parseInt(input.value) - 1;
-            }
-        }
-        
-        // Load cart items
-        function loadCart() {
-            const container = document.getElementById('cart-items');
-            container.innerHTML = '';
+            const filteredProducts = products.filter(product => 
+                product.name.toLowerCase().includes(searchTerm) || product.description.toLowerCase().includes(searchTerm)
+            );
             
-            if (cart.length === 0) {
-                container.innerHTML = '<p>Votre panier est vide</p>';
+            if (filteredProducts.length === 0) {
+                productsContainer.innerHTML = '<p>Aucun produit ne correspond à votre recherche.</p>';
                 return;
             }
             
-            let total = 0;
-            
-            cart.forEach(item => {
-                const itemTotal = item.price * item.quantity;
-                total += itemTotal;
-                
-                const cartItem = document.createElement('div');
-                cartItem.className = 'cart-item';
-                cartItem.innerHTML = `
-                    <div>
-                        <h4>${item.name}</h4>
-                        <p>${item.price.toLocaleString()} FCFA x ${item.quantity}</p>
+            filteredProducts.forEach(product => {
+                const productCard = document.createElement('div');
+                productCard.className = 'product-card';
+                productCard.innerHTML = `
+                    <div class="product-image">
+                        <img src="${product.image}" alt="${product.name}">
                     </div>
-                    <div>
-                        <p><strong>${itemTotal.toLocaleString()} FCFA</strong></p>
-                        <button onclick="removeFromCart(${item.productId})" style="color: var(--destructive); background: none; border: none; cursor: pointer;">Retirer</button>
+                    <div class="product-content">
+                        <h3 class="product-title">${product.name}</h3>
+                        <p>${product.description}</p>
+                        <div class="product-price">${product.price} FCFA</div>
+                        <div class="quantity-controls">
+                            <button class="quantity-btn" onclick="updateQuantity(${product.id}, -1)">-</button>
+                            <input type="number" class="quantity-input" id="quantity-${product.id}" value="1" min="1">
+                            <button class="quantity-btn" onclick="updateQuantity(${product.id}, 1)">+</button>
+                        </div>
+                        <button class="btn add-to-cart" onclick="addToCart(${product.id})">Ajouter au panier</button>
                     </div>
                 `;
-                
-                container.appendChild(cartItem);
+                productsContainer.appendChild(productCard);
             });
-            
-            const cartTotal = document.createElement('div');
-            cartTotal.className = 'cart-total';
-            cartTotal.innerHTML = `
-                <span>Total</span>
-                <span>${total.toLocaleString()} FCFA</span>
-            `;
-            
-            container.appendChild(cartTotal);
+        });
+
+        function updateQuantity(productId, change) {
+            const input = document.getElementById(`quantity-${productId}`);
+            let quantity = parseInt(input.value) + change;
+            if (quantity < 1) {
+                quantity = 1;
+            }
+            input.value = quantity;
         }
-        
-        // Remove item from cart
-        function removeFromCart(productId) {
-            cart = cart.filter(item => item.productId !== productId);
+
+        function addToCart(productId) {
+            const product = products.find(p => p.id === productId);
+            const quantityInput = document.getElementById(`quantity-${productId}`);
+            const quantity = parseInt(quantityInput.value);
+
+            const existingItem = cart.find(item => item.id === productId);
+
+            if (existingItem) {
+                existingItem.quantity += quantity;
+            } else {
+                cart.push({ ...product, quantity });
+            }
+
             localStorage.setItem('market_cart', JSON.stringify(cart));
+            alert(`${quantity}x ${product.name} ajouté(s) au panier !`);
             loadCart();
         }
-        
-        // Handle checkout form submission
-        function handleCheckout(e) {
-            e.preventDefault();
-            
+
+        function loadCart() {
+            const cartItemsContainer = document.getElementById('cart-items');
+            cartItemsContainer.innerHTML = '';
+            let total = 0;
+
             if (cart.length === 0) {
-                alert('Votre panier est vide');
+                cartItemsContainer.innerHTML = '<p>Votre panier est vide.</p>';
+            } else {
+                cart.forEach(item => {
+                    const itemTotal = item.price * item.quantity;
+                    total += itemTotal;
+                    const cartItemEl = document.createElement('div');
+                    cartItemEl.className = 'cart-item';
+                    cartItemEl.innerHTML = `
+                        <div>${item.name} (${item.quantity}x)</div>
+                        <div>${itemTotal} FCFA</div>
+                    `;
+                    cartItemsContainer.appendChild(cartItemEl);
+                });
+                
+                const cartTotalEl = document.createElement('div');
+                cartTotalEl.className = 'cart-total';
+                cartTotalEl.innerHTML = `
+                    <span>Total</span>
+                    <span>${total} FCFA</span>
+                `;
+                cartItemsContainer.appendChild(cartTotalEl);
+            }
+        }
+        
+        function showModal(modalId) {
+            document.getElementById(modalId).style.display = 'flex';
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+        }
+
+        document.getElementById('checkout-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            if (cart.length === 0) {
+                alert("Votre panier est vide !");
                 return;
             }
-            
+
             const name = document.getElementById('name').value;
             const phone = document.getElementById('phone').value;
             const address = document.getElementById('address').value;
             const notes = document.getElementById('notes').value;
-            
-            // Calculate total
-            let total = 0;
-            cart.forEach(item => {
-                total += item.price * item.quantity;
-            });
-            
-            // Create order
-            const order = {
-                id: Date.now().toString(),
+            const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+
+            const orderId = 'ORD-' + Date.now();
+            const newOrder = {
+                id: orderId,
                 customerName: name,
                 customerPhone: phone,
                 customerAddress: address,
                 notes: notes,
-                items: [...cart],
-                total: total,
-                status: 'pending',
-                createdAt: new Date().toISOString()
+                orderDate: new Date().toISOString(),
+                paymentStatus: 'En attente de paiement',
+                deliveryStatus: 'En attente de confirmation',
+                items: cart,
+                total: total
             };
-            
-            // Save order
-            orders.push(order);
+            orders.push(newOrder);
             localStorage.setItem('market_orders', JSON.stringify(orders));
             
-            // Save user for future orders
-            currentUser = { name, phone, address };
-            localStorage.setItem('market_user', JSON.stringify(currentUser));
+            document.getElementById('modal-order-id').textContent = orderId;
+            document.getElementById('modal-total-price').textContent = `${total} FCFA`;
             
-            // Clear cart
+            showModal('confirmation-modal');
+            
+            // Clear cart and form after showing modal
             cart = [];
-            localStorage.setItem('market_cart', JSON.stringify(cart));
-            
-            // Notify admin via WhatsApp
-            const whatsappMessage = `Nouvelle commande sur Marché à Domicile!%0A%0AClient: ${name}%0ATéléphone: ${phone}%0AAdresse: ${address}%0ATotal: ${total.toLocaleString()} FCFA%0A%0AVoir les détails: ${window.location.origin}${window.location.pathname}`;
-            window.open(`https://wa.me/2250700318328?text=${whatsappMessage}`, '_blank');
-            
-            // Notify admin via email (in a real app, this would be a server-side call)
-            console.log(`Email notification would be sent to paulkouame973@gmail.com for order ${order.id}`);
-            
-            // Show confirmation
-            alert(`Commande passée avec succès! Votre référence: ${order.id}. Nous vous contacterons bientôt.`);
-            
-            // Redirect to user dashboard
-            document.getElementById('user-name').textContent = name;
-            showSection('user-dashboard');
-        }
-        
-        // Handle admin login
-        function handleAdminLogin(e) {
-            e.preventDefault();
-            
-            const email = document.getElementById('admin-email').value;
-            const password = document.getElementById('admin-password').value;
-            
-            const admin = admins.find(a => a.email === email && a.password === password);
-            
-            if (admin) {
-                isAdmin = true;
-                currentUser = { 
-                    name: admin.name, 
-                    email: admin.email, 
-                    isSuperAdmin: admin.isSuperAdmin 
-                };
-                
-                // Load admin dashboard
-                loadAdminDashboard();
-                showSection('admin-dashboard');
-            } else {
-                alert('Email ou mot de passe incorrect');
+            localStorage.removeItem('market_cart');
+            document.getElementById('checkout-form').reset();
+        });
+
+        window.onload = () => {
+            if (!localStorage.getItem('market_products')) {
+                localStorage.setItem('market_products', JSON.stringify(products));
             }
-        }
-        
-        // Load admin dashboard
-        function loadAdminDashboard() {
-            // Calculate stats
-            const today = new Date().toDateString();
-            const todayOrders = orders.filter(order => new Date(order.createdAt).toDateString() === today);
-            const pendingOrders = orders.filter(order => order.status === 'pending');
-            
-            const monthRevenue = orders
-                .filter(order => new Date(order.createdAt).getMonth() === new Date().getMonth())
-                .reduce((total, order) => total + order.total, 0);
-            
-            // Update stats
-            document.getElementById('today-orders').textContent = todayOrders.length;
-            document.getElementById('pending-orders').textContent = pendingOrders.length;
-            document.getElementById('month-revenue').textContent = `${monthRevenue.toLocaleString()} FCFA`;
-            
-            // Load orders table
-            loadOrdersTable();
-            
-            // Load admins table if super admin
-            if (currentUser.isSuperAdmin) {
-                loadAdminsTable();
-            }
-        }
-        
-        // Load orders table
-        function loadOrdersTable() {
-            const tbody = document.getElementById('orders-table-body');
-            tbody.innerHTML = '';
-            
-            orders.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt)).forEach(order => {
-                const tr = document.createElement('tr');
-                
-                const statusClass = order.status === 'pending' ? 'status-pending' : 'status-delivered';
-                
-                tr.innerHTML = `
-                    <td>${order.id}</td>
-                    <td>${order.customerName}</td>
-                    <td>${new Date(order.createdAt).toLocaleDateString()}</td>
-                    <td>${order.total.toLocaleString()} FCFA</td>
-                    <td><span class="status-badge ${statusClass}">${order.status}</span></td>
-                    <td>
-                        <button class="btn" onclick="viewOrderDetails('${order.id}')">Détails</button>
-                        ${order.status === 'pending' ? 
-                            `<button class="btn" onclick="markAsDelivered('${order.id}')">Livrée</button>` : 
-                            ''
-                        }
-                    </td>
-                `;
-                
-                tbody.appendChild(tr);
-            });
-        }
-        
-        // Load admins table
-        function loadAdminsTable() {
-            const tbody = document.getElementById('admins-table-body');
-            tbody.innerHTML = '';
-            
-            admins.forEach(admin => {
-                const tr = document.createElement('tr');
-                
-                tr.innerHTML = `
-                    <td>${admin.name}</td>
-                    <td>${admin.email}</td>
-                    <td>${new Date(admin.createdAt).toLocaleDateString()}</td>
-                    <td>
-                        ${!admin.isSuperAdmin ? 
-                            `<button class="btn" onclick="deleteAdmin('${admin.email}')" style="background-color: var(--destructive);">Supprimer</button>` : 
-                            '<span>Super Admin</span>'
-                        }
-                    </td>
-                `;
-                
-                tbody.appendChild(tr);
-            });
-        }
-        
-        // View order details
-        function viewOrderDetails(orderId) {
-            const order = orders.find(o => o.id === orderId);
-            
-            if (order) {
-                let itemsHtml = '';
-                order.items.forEach(item => {
-                    itemsHtml += `
-                        <div class="cart-item">
-                            <div>${item.name}</div>
-                            <div>${item.quantity} x ${item.price.toLocaleString()} FCFA</div>
-                        </div>
-                    `;
-                });
-                
-                document.getElementById('order-details-content').innerHTML = `
-                    <p><strong>Référence:</strong> ${order.id}</p>
-                    <p><strong>Client:</strong> ${order.customerName}</p>
-                    <p><strong>Téléphone:</strong> ${order.customerPhone}</p>
-                    <p><strong>Adresse:</strong> ${order.customerAddress}</p>
-                    <p><strong>Date:</strong> ${new Date(order.createdAt).toLocaleString()}</p>
-                    <p><strong>Statut:</strong> ${order.status}</p>
-                    ${order.notes ? `<p><strong>Notes:</strong> ${order.notes}</p>` : ''}
-                    <h4>Articles:</h4>
-                    ${itemsHtml}
-                    <div class="cart-total">
-                        <span>Total</span>
-                        <span>${order.total.toLocaleString()} FCFA</span>
-                    </div>
-                `;
-                
-                showModal('order-details-modal');
-            }
-        }
-        
-        // Mark order as delivered
-        function markAsDelivered(orderId) {
-            const order = orders.find(o => o.id === orderId);
-            
-            if (order) {
-                order.status = 'delivered';
+            if (!localStorage.getItem('market_orders')) {
                 localStorage.setItem('market_orders', JSON.stringify(orders));
-                loadOrdersTable();
-                loadAdminDashboard(); // Refresh stats
-                
-                // Notify customer via WhatsApp
-                const whatsappMessage = `Votre commande ${orderId} a été livrée! Merci pour votre confiance. À bientôt!`;
-                window.open(`https://wa.me/${order.customerPhone}?text=${whatsappMessage}`, '_blank');
             }
-        }
-        
-        // Handle add product
-        function handleAddProduct(e) {
-            e.preventDefault();
-            
-            const name = document.getElementById('product-name').value;
-            const category = document.getElementById('product-category').value;
-            const price = parseInt(document.getElementById('product-price').value);
-            const description = document.getElementById('product-description').value;
-            
-            const newProduct = {
-                id: Date.now(),
-                name,
-                category,
-                price,
-                description,
-                image: `https://placeholder-image-service.onrender.com/image/400x300?prompt=${encodeURIComponent(name)}&id=8105ba0e-3df8-4e88-a5ab-3932bc898d63&customer_id=cus_SNP76m8phya3T9`
-            };
-            
-            products.push(newProduct);
-            localStorage.setItem('market_products', JSON.stringify(products));
-            
-            alert('Produit ajouté avec succès');
-            closeModal('add-product-modal');
-            document.getElementById('add-product-form').reset();
-            
-            // Reload products if on products tab
-            if (document.getElementById('admin-products-tab').style.display !== 'none') {
-                loadProducts();
-            }
-        }
-        
-        // Handle add admin
-        function handleAddAdmin(e) {
-            e.preventDefault();
-            
-            if (!currentUser.isSuperAdmin) {
-                alert('Seuls les super administrateurs peuvent ajouter des administrateurs');
-                return;
-            }
-            
-            const name = document.getElementById('admin-name').value;
-            const email = document.getElementById('admin-email-add').value;
-            const password = document.getElementById('admin-password-add').value;
-            
-            // Check if admin already exists
-            if (admins.find(a => a.email === email)) {
-                alert('Un administrateur avec cet email existe déjà');
-                return;
-            }
-            
-            const newAdmin = {
-                name,
-                email,
-                password,
-                isSuperAdmin: false,
-                createdAt: new Date().toISOString()
-            };
-            
-            admins.push(newAdmin);
-            localStorage.setItem('market_admins', JSON.stringify(admins));
-            
-            alert('Administrateur ajouté avec succès');
-            closeModal('add-admin-modal');
-            document.getElementById('add-admin-form').reset();
-            
-            // Reload admins table
-            loadAdminsTable();
-        }
-        
-        // Delete admin
-        function deleteAdmin(email) {
-            if (!currentUser.isSuperAdmin) {
-                alert('Seuls les super administrateurs peuvent supprimer des administrateurs');
-                return;
-            }
-            
-            if (confirm('Êtes-vous sûr de vouloir supprimer cet administrateur ?')) {
-                admins = admins.filter(a => a.email !== email);
+            if (!localStorage.getItem('market_admins')) {
+                const admins = [{ name: "Super Admin", email: "paulkouame973@gmail.com", password: "admin123", isSuperAdmin: true, createdAt: new Date().toISOString() }];
                 localStorage.setItem('market_admins', JSON.stringify(admins));
-                loadAdminsTable();
             }
-        }
-        
-        // Load user orders
-        function loadUserOrders() {
-            if (!currentUser) return;
-            
-            const container = document.getElementById('user-orders-list');
-            container.innerHTML = '';
-            
-            const userOrders = orders.filter(order => 
-                order.customerPhone === currentUser.phone
-            ).sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
-            
-            if (userOrders.length === 0) {
-                container.innerHTML = '<p>Vous n\'avez pas encore passé de commande</p>';
-                return;
-            }
-            
-            userOrders.forEach(order => {
-                const statusClass = order.status === 'pending' ? 'status-pending' : 'status-delivered';
-                
-                const orderElement = document.createElement('div');
-                orderElement.className = 'cart-summary';
-                orderElement.innerHTML = `
-                    <h4>Commande #${order.id}</h4>
-                    <p>Date: ${new Date(order.createdAt).toLocaleDateString()}</p>
-                    <p>Statut: <span class="status-badge ${statusClass}">${order.status}</span></p>
-                    <p>Total: ${order.total.toLocaleString()} FCFA</p>
-                    <button class="btn" onclick="viewOrderDetails('${order.id}')">Voir les détails</button>
-                `;
-                
-                container.appendChild(orderElement);
-            });
-        }
-        
-        // Show admin tab
-        function showAdminTab(tabName) {
-            // Hide all tabs
-            document.getElementById('admin-orders-tab').style.display = 'none';
-            document.getElementById('admin-products-tab').style.display = 'none';
-            document.getElementById('admin-admins-tab').style.display = 'none';
-            
-            // Remove active class from all buttons
-            document.querySelectorAll('.admin-nav button').forEach(btn => {
-                btn.classList.remove('active');
-            });
-            
-            // Show selected tab and set active button
-            document.getElementById(`admin-${tabName}-tab`).style.display = 'block';
-            event.target.classList.add('active');
-            
-            // Load content for tab if needed
-            if (tabName === 'products') {
-                loadProducts();
-            } else if (tabName === 'admins' && currentUser.isSuperAdmin) {
-                loadAdminsTable();
-            }
-        }
-        
-        // Show modal
-        function showModal(modalId) {
-            document.getElementById(modalId).style.display = 'flex';
-        }
-        
-        // Close modal
-        function closeModal(modalId) {
-            document.getElementById(modalId).style.display = 'none';
-        }
-        
-        // Initialize the app when the page loads
-        window.onload = initApp;
+            showSection('home');
+            attachFilterListeners();
+        };
     </script>
 </body>
 </html>
