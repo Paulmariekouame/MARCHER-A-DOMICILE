@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Admin - Marché à Domicile</title>
+    <style>
+        :root {
+            --primary: #22c55e;
+            --primary-dark: #16a34a;
+            --secondary: #f97316;
+            --accent: #ea580c;
+            --background: #fafaf9;
+            --foreground: #1c1917;
+            --muted: #e7e5e4;
+            --muted-foreground: #78716c;
+            --card: #ffffff;
+            --border: #d6d3d1;
+            --destructive: #dc2626;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--background);
+            color: var(--foreground);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            background-color: var(--primary-dark);
+        }
+
+        .btn-secondary {
+            background-color: var(--secondary);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--accent);
+        }
+
+        .btn-destructive {
+            background-color: var(--destructive);
+        }
+
+        .btn-destructive:hover {
+            background-color: #b91c1c;
+        }
+
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .product-card {
+            background-color: var(--card);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+
+        .product-image {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .product-content {
+            padding: 1.5rem;
+        }
+        
+        .admin-login {
+            max-width: 400px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background-color: var(--card);
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+        .admin-dashboard {
+            background-color: var(--background);
+            padding-top: 2rem;
+        }
+
+        .dashboard-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .dashboard-card {
+            background-color: var(--card);
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+
+        .dashboard-card h3 {
+            color: var(--muted-foreground);
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .dashboard-card p {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--primary);
+        }
+
+        .admin-nav {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 1rem;
+        }
+
+        .admin-nav button {
+            padding: 0.5rem 1rem;
+            background-color: var(--muted);
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .admin-nav button.active {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .orders-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .orders-table th, .orders-table td {
+            padding: 0.8rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .orders-table th {
+            background-color: var(--muted);
+            font-weight: 600;
+        }
+
+        .status-badge {
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            white-space: nowrap;
+        }
+
+        .status-pending-payment {
+            background-color: #fef3c7;
+            color: #92400e;
+        }
+        
+        .status-confirmed-payment {
+            background-color: #bfdbfe;
+            color: #1e40af;
+        }
+
+        .status-in-delivery {
+            background-color: #dbeafe;
+            color: #1e40af;
+        }
+
+        .status-delivered {
+            background-color: #dcfce7;
+            color: #166534;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .modal-content {
+            background-color: var(--card);
+            padding: 2rem;
+            border-radius: 8px;
+            max-width: 500px;
+            width: 100%;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .close-modal {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        @media (max-width: 768px) {
+            .dashboard-cards {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <section id="admin-login-section" class="section">
+            <div class="admin-login">
+                <h2>Connexion administrateur</h2>
+                <form id="admin-login-form">
+                    <div class="form-group">
+                        <label for="admin-email">Email</label>
+                        <input type="email" id="admin-email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="admin-password">Mot de passe</label>
+                        <input type="password" id="admin-password" required>
+                    </div>
+                    <button type="submit" class="btn">Se connecter</button>
+                </form>
+            </div>
+        </section>
+
+        <section id="admin-dashboard-section" class="section" style="display: none;">
+            <h2>Tableau de bord administrateur</h2>
+            
+            <div class="dashboard-cards">
+                <div class="dashboard-card">
+                    <h3>Commandes en attente</h3>
+                    <p id="pending-orders">0</p>
+                </div>
+                <div class="dashboard-card">
+                    <h3>Paiements à confirmer</h3>
+                    <p id="pending-payments">0</p>
+                </div>
+                <div class="dashboard-card">
+                    <h3>Commandes en livraison</h3>
+                    <p id="in-delivery-orders">0</p>
+                </div>
+            </div>
+            
+            <div class="admin-nav">
+                <button class="active" onclick="showAdminTab('orders')">Commandes</button>
+                <button onclick="showAdminTab('products')">Produits</button>
+                <button onclick="showAdminTab('admins')">Administrateurs</button>
+            </div>
+            
+            <div id="admin-orders-tab">
+                <h3>Gestion des commandes</h3>
+                <table class="orders-table">
+                    <thead>
+                        <tr>
+                            <th>Référence</th>
+                            <th>Client</th>
+                            <th>Date</th>
+                            <th>Total</th>
+                            <th>Paiement</th>
+                            <th>Livraison</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="orders-table-body">
+                        </tbody>
+                </table>
+            </div>
+            
+            <div id="admin-products-tab" style="display: none;">
+                <h3>Gestion des produits</h3>
+                <button class="btn" onclick="showModal('add-product-modal')">Ajouter un produit</button>
+                <div class="products" id="admin-products-container">
+                    </div>
+            </div>
+            
+            <div id="admin-admins-tab" style="display: none;">
+                <h3>Gestion des administrateurs</h3>
+                <button class="btn" onclick="showModal('add-admin-modal')">Ajouter un administrateur</button>
+                <table class="orders-table">
+                    <thead>
+                        <tr>
+                            <th>Nom</th>
+                            <th>Email</th>
+                            <th>Date d'ajout</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="admins-table-body">
+                        </tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+
+    <div id="add-product-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Ajouter un produit</h3>
+                <button class="close-modal" onclick="closeModal('add-product-modal')">&times;</button>
+            </div>
+            <form id="add-product-form">
+                <div class="form-group">
+                    <label for="product-name">Nom du produit</label>
+                    <input type="text" id="product-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="product-category">Catégorie</label>
+                    <select id="product-category" required>
+                        <option value="legumes">Légumes</option>
+                        <option value="fruits">Fruits</option>
+                        <option value="viandes">Viandes</option>
+                        <option value="autres">Autres</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="product-subcategory">Sous-catégorie</label>
+                    <input type="text" id="product-subcategory" required placeholder="Ex: legumes_frais">
+                </div>
+                <div class="form-group">
+                    <label for="product-price">Prix (FCFA)</label>
+                    <input type="number" id="product-price" required min="0">
+                </div>
+                <div class="form-group">
+                    <label for="product-description">Description</label>
+                    <input type="text" id="product-description">
+                </div>
+                <div class="form-group">
+                    <label for="product-image">URL de l'image</label>
+                    <input type="url" id="product-image" placeholder="https://..." required>
+                </div>
+                <button type="submit" class="btn">Ajouter</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="add-admin-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Ajouter un administrateur</h3>
+                <button class="close-modal" onclick="closeModal('add-admin-modal')">&times;</button>
+            </div>
+            <form id="add-admin-form">
+                <div class="form-group">
+                    <label for="admin-name">Nom complet</label>
+                    <input type="text" id="admin-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="admin-email-add">Email</label>
+                    <input type="email" id="admin-email-add" required>
+                </div>
+                <div class="form-group">
+                    <label for="admin-password-add">Mot de passe</label>
+                    <input type="password" id="admin-password-add" required>
+                </div>
+                <button type="submit" class="btn">Ajouter</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="order-details-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Détails de la commande</h3>
+                <button class="close-modal" onclick="closeModal('order-details-modal')">&times;</button>
+            </div>
+            <div id="order-details-content">
+                </div>
+        </div>
+    </div>
+
+    <script>
+        let orders = JSON.parse(localStorage.getItem('market_orders')) || [];
+        let products = JSON.parse(localStorage.getItem('market_products')) || [];
+        let admins = JSON.parse(localStorage.getItem('market_admins')) || [];
+        let currentUser = null;
+
+        document.getElementById('admin-login-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const email = document.getElementById('admin-email').value;
+            const password = document.getElementById('admin-password').value;
+
+            const admin = admins.find(a => a.email === email && a.password === password);
+            if (admin) {
+                currentUser = admin;
+                document.getElementById('admin-login-section').style.display = 'none';
+                document.getElementById('admin-dashboard-section').style.display = 'block';
+                loadAdminDashboard();
+            } else {
+                alert("Email ou mot de passe incorrect.");
+            }
+        });
+
+        function loadAdminDashboard() {
+            // Stats
+            const pendingOrders = orders.filter(o => o.deliveryStatus === 'En attente de confirmation').length;
+            const pendingPayments = orders.filter(o => o.paymentStatus === 'En attente de paiement').length;
+            const inDeliveryOrders = orders.filter(o => o.deliveryStatus === 'En cours de livraison').length;
+
+            document.getElementById('pending-orders').textContent = pendingOrders;
+            document.getElementById('pending-payments').textContent = pendingPayments;
+            document.getElementById('in-delivery-orders').textContent = inDeliveryOrders;
+
+            // Order table
+            const ordersTableBody = document.getElementById('orders-table-body');
+            ordersTableBody.innerHTML = '';
+            orders.sort((a, b) => new Date(b.orderDate) - new Date(a.orderDate));
+            orders.forEach(order => {
+                const paymentStatusClass = 
+                    order.paymentStatus === 'En attente de paiement' ? 'status-pending-payment' : 
+                    order.paymentStatus === 'Payé' ? 'status-confirmed-payment' : '';
+                
+                const deliveryStatusClass =
+                    order.deliveryStatus === 'En attente de confirmation' ? 'status-pending-payment' :
+                    order.deliveryStatus === 'En cours de livraison' ? 'status-in-delivery' :
+                    order.deliveryStatus === 'Livrée' ? 'status-delivered' : '';
+
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${order.id}</td>
+                    <td>${order.customerName}</td>
+                    <td>${new Date(order.orderDate).toLocaleDateString()}</td>
+                    <td>${order.total} FCFA</td>
+                    <td><span class="status-badge ${paymentStatusClass}">${order.paymentStatus}</span></td>
+                    <td><span class="status-badge ${deliveryStatusClass}">${order.deliveryStatus}</span></td>
+                    <td>
+                        <button class="btn btn-secondary" onclick="viewOrderDetails('${order.id}')">Détails</button>
+                        ${order.paymentStatus === 'En attente de paiement' ? `<button class="btn" onclick="updatePaymentStatus('${order.id}', 'Payé')">Confirmer paiement</button>` : ''}
+                        ${order.deliveryStatus === 'En attente de confirmation' && order.paymentStatus === 'Payé' ? `<button class="btn" onclick="updateDeliveryStatus('${order.id}', 'En cours de livraison')">Commencer livraison</button>` : ''}
+                        ${order.deliveryStatus === 'En cours de livraison' ? `<button class="btn" onclick="updateDeliveryStatus('${order.id}', 'Livrée')">Marquer comme livrée</button>` : ''}
+                    </td>
+                `;
+                ordersTableBody.appendChild(row);
+            });
+
+            // Product management display
+            const adminProductsContainer = document.getElementById('admin-products-container');
+            adminProductsContainer.innerHTML = '';
+            products.forEach(product => {
+                const productCard = document.createElement('div');
+                productCard.className = 'product-card';
+                productCard.innerHTML = `
+                    <div class="product-image">
+                        <img src="${product.image}" alt="${product.name}">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">${product.name}</h3>
+                        <p>${product.description}</p>
+                        <div class="product-price">${product.price} FCFA</div>
+                        <p>Sous-catégorie: ${product.subcategory}</p>
+                        <button class="btn btn-destructive" onclick="deleteProduct(${product.id})">Supprimer</button>
+                    </div>
+                `;
+                adminProductsContainer.appendChild(productCard);
+            });
+
+            // Admins list
+            const adminsTableBody = document.getElementById('admins-table-body');
+            adminsTableBody.innerHTML = '';
+            admins.forEach(admin => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${admin.name}</td>
+                    <td>${admin.email}</td>
+                    <td>${new Date(admin.createdAt).toLocaleDateString()}</td>
+                    <td>
+                        ${!admin.isSuperAdmin ? `<button class="btn btn-destructive" onclick="deleteAdmin('${admin.email}')">Supprimer</button>` : 'Super Admin'}
+                    </td>
+                `;
+                adminsTableBody.appendChild(row);
+            });
+        }
+        
+        function updatePaymentStatus(orderId, newStatus) {
+            const order = orders.find(o => o.id === orderId);
+            if (order) {
+                order.paymentStatus = newStatus;
+                localStorage.setItem('market_orders', JSON.stringify(orders));
+                alert(`Le statut de paiement de la commande ${orderId} a été mis à jour.`);
+                loadAdminDashboard();
+            }
+        }
+        
+        function updateDeliveryStatus(orderId, newStatus) {
+            const order = orders.find(o => o.id === orderId);
+            if (order) {
+                order.deliveryStatus = newStatus;
+                localStorage.setItem('market_orders', JSON.stringify(orders));
+                alert(`Le statut de livraison de la commande ${orderId} a été mis à jour.`);
+                loadAdminDashboard();
+            }
+        }
+
+        function viewOrderDetails(orderId) {
+            const order = orders.find(o => o.id === orderId);
+            const content = document.getElementById('order-details-content');
+            if (order) {
+                const itemsList = order.items.map(item => `<li>${item.name} x ${item.quantity} - ${item.price * item.quantity} FCFA</li>`).join('');
+                content.innerHTML = `
+                    <p><strong>Référence:</strong> ${order.id}</p>
+                    <p><strong>Client:</strong> ${order.customerName}</p>
+                    <p><strong>Téléphone:</strong> ${order.customerPhone}</p>
+                    <p><strong>Adresse:</strong> ${order.customerAddress}</p>
+                    <p><strong>Notes:</strong> ${order.notes || 'N/A'}</p>
+                    <p><strong>Date:</strong> ${new Date(order.orderDate).toLocaleString()}</p>
+                    <p><strong>Total:</strong> ${order.total} FCFA</p>
+                    <h4>Produits:</h4>
+                    <ul>${itemsList}</ul>
+                    <p><strong>Statut de paiement:</strong> <span class="status-badge status-${order.paymentStatus.toLowerCase().replace(/ /g, '-')}">${order.paymentStatus}</span></p>
+                    <p><strong>Statut de livraison:</strong> <span class="status-badge status-${order.deliveryStatus.toLowerCase().replace(/ /g, '-')}">${order.deliveryStatus}</span></p>
+                `;
+                showModal('order-details-modal');
+            }
+        }
+
+        function deleteProduct(productId) {
+            if (confirm("Êtes-vous sûr de vouloir supprimer ce produit ?")) {
+                products = products.filter(p => p.id !== productId);
+                localStorage.setItem('market_products', JSON.stringify(products));
+                loadAdminDashboard();
+            }
+        }
+
+        function deleteAdmin(adminEmail) {
+            if (currentUser && currentUser.isSuperAdmin && confirm("Êtes-vous sûr de vouloir supprimer cet administrateur ?")) {
+                admins = admins.filter(a => a.email !== adminEmail);
+                localStorage.setItem('market_admins', JSON.stringify(admins));
+                loadAdminDashboard();
+            } else if (!currentUser.isSuperAdmin) {
+                alert("Vous n'avez pas la permission de supprimer des administrateurs.");
+            }
+        }
+
+        function showAdminTab(tabId) {
+            document.getElementById('admin-orders-tab').style.display = 'none';
+            document.getElementById('admin-products-tab').style.display = 'none';
+            document.getElementById('admin-admins-tab').style.display = 'none';
+            document.getElementById(`admin-${tabId}-tab`).style.display = 'block';
+
+            document.querySelectorAll('.admin-nav button').forEach(btn => btn.classList.remove('active'));
+            document.querySelector(`.admin-nav button[onclick="showAdminTab('${tabId}')"]`).classList.add('active');
+            
+            if (tabId === 'products') {
+                loadAdminDashboard();
+            }
+        }
+
+        function showModal(modalId) {
+            document.getElementById(modalId).style.display = 'flex';
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+        }
+
+        document.getElementById('add-product-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const newProduct = {
+                id: products.length > 0 ? Math.max(...products.map(p => p.id)) + 1 : 1,
+                name: document.getElementById('product-name').value,
+                category: document.getElementById('product-category').value,
+                subcategory: document.getElementById('product-subcategory').value,
+                price: parseInt(document.getElementById('product-price').value),
+                description: document.getElementById('product-description').value,
+                image: document.getElementById('product-image').value
+            };
+            products.push(newProduct);
+            localStorage.setItem('market_products', JSON.stringify(products));
+            closeModal('add-product-modal');
+            loadAdminDashboard();
+            alert("Produit ajouté avec succès !");
+        });
+
+        document.getElementById('add-admin-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            if (!currentUser || !currentUser.isSuperAdmin) {
+                alert("Vous n'avez pas la permission d'ajouter des administrateurs.");
+                return;
+            }
+            const newAdmin = {
+                name: document.getElementById('admin-name').value,
+                email: document.getElementById('admin-email-add').value,
+                password: document.getElementById('admin-password-add').value,
+                isSuperAdmin: false,
+                createdAt: new Date().toISOString()
+            };
+            
+            if (admins.find(a => a.email === newAdmin.email)) {
+                alert("Cet email est déjà utilisé par un administrateur.");
+                return;
+            }
+            
+            admins.push(newAdmin);
+            localStorage.setItem('market_admins', JSON.stringify(admins));
+            closeModal('add-admin-modal');
+            loadAdminDashboard();
+            alert("Administrateur ajouté avec succès !");
+        });
+
+        window.onload = () => {
+            if (!localStorage.getItem('market_admins')) {
+                const initialAdmins = [{ name: "Super Admin", email: "paulkouame973@gmail.com", password: "admin123", isSuperAdmin: true, createdAt: new Date().toISOString() }];
+                localStorage.setItem('market_admins', JSON.stringify(initialAdmins));
+                admins = initialAdmins;
+            }
+        };
+    </script>
+</body>
+</html>
